@@ -1,3 +1,4 @@
+let signUp = false;
 $('#SignedUpCompleteId').hide();
 $('#LoginpCompleteId').hide();
 $('#signupBoxId').hide();
@@ -128,6 +129,8 @@ $('#LastNameInputId').keyup(function (e) {
 
 $('input:radio').click(function () {
     $('#GenderCheckId').show();
+    $('#GenderBallonBoxId').hide();
+
     array[2] = true;
 });
 
@@ -293,6 +296,7 @@ $('#signupSubmitId').click(function () {
         $('#signupBoxId').hide();
         $('#signupBoxId .contents').hide();
         $('#SignedUpCompleteId').show();
+        signUp = true;
     }
 });
 
@@ -318,13 +322,17 @@ $('#LoginSubmitId').click(function () {
 
     let E = ($('#LoginEmailInputId').val() == $('#EmailInputId').val());
     let P = ($('#LoginPWInputId').val() == $('#PWInputId').val());
-    if ($('#EmailInputId').val() != "" && $('#PWInputId').val() != "") {
+    if (signUp) {
         if (E && P) {
             $('#loginBoxId').hide();
             $('#HeadId').hide();
             $('#loginBoxId .contents').hide();
             $('#LoginpCompleteId').show();
         }
+    }
+    else {
+        $('#LoginFailId').html("Credential do not match!");
+        $('#LoginFailId').css('color', 'red');
     }
     if ($('#LoginEmailInputId').val() == "") {
         $('#LoginEmailBallonBoxId').show();
