@@ -6,9 +6,10 @@ $('#signupBoxId .contents').hide();
 $('.ballonbox').hide();
 $('.imagestyle').hide();
 $('input').css('outline', 'none');
+//Hiding things that shouldn't be shown in the beginning.
 
 
-$('#loginTabId').click(function () {
+$('#loginTabId').click(function () {//Changes that occur when you press the login tab
     $('#SignedUpCompleteId').hide();
 
     $('#loginNaviId').removeClass('navigation-bar-inactive');
@@ -26,7 +27,7 @@ $('#loginTabId').click(function () {
     $('#loginBoxId').show();
     $('#loginBoxId .contents').fadeIn(1500);
 });
-$('#signupTabId').click(function () {
+$('#signupTabId').click(function () { // Changes that occur when you press the sign up tab
     $('#SignedUpCompleteId').hide();
 
     $('#signupNaviId').removeClass('navigation-bar-inactive');
@@ -45,18 +46,18 @@ $('#signupTabId').click(function () {
 
     
 });
-$('#signupBoxId input').focus(function () {
-    $(this).css('outline', 'none');
-    // $('#signupBoxId input').css('border-color', 'red');
-    // $('.ballonbox').show();
-    // $('#signupBoxId :submit').css('border-color', '#2a5594');
-});
-let array = [false, false, false, false, false, false];
+
+let array = [false, false, false, false, false, false];  // Check if the input box has the right value.
 let pattern_num = /[0-9]/;
 let pattern_eng = /^[a-z|A-Z]+$/;
 let pattern_eng_cap = /^[A-Z]+$/;
 var pattern_email = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 let pattern_pw = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
+
+
+//The codes that will come out from now on are codes that indicate changes when you enter the keyboard into the input box. 
+//There are many overlapping contents, so I leave it as an annotation once.
+
 $('#FirstnameInputId').keyup(function (e) {
     if (pattern_eng_cap.test(e.target.value[0])) { // capital
         if (!pattern_eng.test(e.target.value)) { // not allowed
@@ -260,7 +261,7 @@ $('#PWCheckInputId').keyup(function (e) {
 
 
 
-
+//When you press sign up, only inputs that do not fit display errors.
 $('#signupSubmitId').click(function () {
     let cnt = 0;
     for (let i = 0; i < 6; i++){
@@ -318,6 +319,7 @@ $('#LoginPWInputId').keyup(function (e) {
     }
 });
 
+//Both the email and password must be correct to log in.
 $('#LoginSubmitId').click(function () {
 
     let E = ($('#LoginEmailInputId').val() == $('#EmailInputId').val());
@@ -328,6 +330,10 @@ $('#LoginSubmitId').click(function () {
             $('#HeadId').hide();
             $('#loginBoxId .contents').hide();
             $('#LoginpCompleteId').show();
+        }
+        else {
+            $('#LoginFailId').html("Credential do not match!");
+            $('#LoginFailId').css('color', 'red');
         }
     }
     else {
