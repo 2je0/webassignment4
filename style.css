@@ -59,7 +59,8 @@ section {
   background-color: transparent;
 }
 .boxStyle {
-  width: 100%;
+  /* width: 100%; */
+  width: 450px;
   height: 35px;
   border: solid;
   border-width: thin;
@@ -83,4 +84,36 @@ section {
   align-items: center;
   margin-top: 30px;
   font-weight: bold;
+}
+
+.ballonbox {
+  position: absolute;
+  transform: translate(460px, -28px);
+  background-color: #2a5594;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 0.2rem;
+  font-size: small;
+  font-weight: bold;
+}
+.head-container:hover {
+  cursor: pointer;
+}
+input:focus {
+  border-color: red;
+}
+
+.imagestyle {
+  background-color: transparent;
+  width: 30px;
+  position: absolute;
+  transform: translate(410px, -30px);
+}
+input {
+  border: none;
+}
+.loginBtn:hover {
+  cursor: pointer;
 }

@@ -13,40 +13,98 @@
     <section >
         <div class="main-container">
             
-            <div class="head-container">
-                <div class="login-container">
-                    <div class="navigation-bar-active">
+            <div class="head-container" id="HeadId">
+                <div class="login-container" id="loginTabId">
+                    <div class="navigation-bar-active" id="loginNaviId">
                         
                     </div>
-                    <div class="text-active">
+                    <div class="text-active" id="loginTextId">
                         Login
                     </div>
                 </div>
-                <div class="signup-container">
-                    <div class="navigation-bar-inactive">
+                <div class="signup-container" id="signupTabId">
+                    <div class="navigation-bar-inactive" id="signupNaviId">
 
                     </div>
-                    <div class="text-inactive">
+                    <div class="text-inactive" id="signupTextId">
                         Sign Up
                     </div>
                 </div>
             </div>
         
-            <div class="contents-container">
+            <div class="contents-container" id="loginBoxId">
                <div class="contents">
                    <div class="contents-text" style="font-weight: bold; font-size: 1.4rem;">Login</div>
                    <div class="contents-text" style="font-weight: bold;">Enter user name and password.</div>
                    <div class="contents-text">Email</div>
-                   <input type="email" placeholder="Email" class="boxStyle">
+                   <input type="email" placeholder="Email" class="boxStyle" id="LoginEmailInputId">
+                    <div class="ballonbox" id="LoginEmailBallonBoxId">Please enter your first name!</div>
+                    <img src="check.png" alt="" class="imagestyle" id="LoginEmailCheckId">
+
                    <div class="contents-text">Password</div>
-                   <input type="password" placeholder="Password" class="boxStyle">
-                   <div class="loginBtn" >
-                       Login
-                   </div>
+                   <input type="password" placeholder="Password" class="boxStyle" id="LoginPWInputId">
+                    <div class="ballonbox" id="LoginPWBallonBoxId" >Please enter your first name!</div>
+                    <img src="check.png" alt="" class="imagestyle" id="LoginPWCheckId">
+
+                    <div class="loginBtn" id="LoginSubmitId">Login</div>
+                   <!-- <input type="submit" class="loginBtn" value="Login"> -->
+                   
                </div>
             </div>
-            <div class="contents-container">
-                
+            <div class="contents-container" id="signupBoxId">
+                <div class="contents">
+                    <form action="" id="signupFormId" style="background-color: transparent;">
+                        <div class="contents-text" style="font-weight: bold; font-size: 1.4rem;">Sign up</div>
+                        <div class="contents-text" style="font-weight: bold;">Fill in the form:</div>
+                        
+                        <div class="contents-text">First name</div>
+                        <input type="text" name = "FirstName" placeholder="First name" class="boxStyle" id="FirstnameInputId">
+                        <div class="ballonbox" id="FirstNameBallonBoxId">Please enter your first name!</div>
+                        <img src="check.png" alt="" class="imagestyle" id="FirstNameCheckId">
+
+                        <div class="contents-text">Last name</div>
+                        <input type="text" placeholder="Last name" class="boxStyle" id="LastNameInputId">
+                        <div class="ballonbox" id="LastNameBallonBoxId">Please enter your last name!</div>
+                        <img src="check.png" alt="" class="imagestyle" id="LastNameCheckId">
+                        
+                        <input type="radio" name="gender" value="Male" style="margin: 23px 5px 0 0;">Male
+                        <input type="radio" name="gender" value="Female" style="margin: 23px 5px 0 10px;">Female
+                        <div class="ballonbox" style="transform: translate(460px, -15px);" id="GenderBallonBoxId">Please select your gender!</div>
+                        <img src="check.png" alt="" class="imagestyle" style="transform: translate(274px,25px);" id="GenderCheckId">
+                        
+                        <div class="contents-text">Email</div>
+                        <input type="Email" placeholder="Email" class="boxStyle" id="EmailInputId">
+                        <div class="ballonbox" id="EmailBallonBoxId">Please enter your email!</div>
+                        <img src="check.png" alt="" class="imagestyle" id="EmailCheckId">
+                        
+                        <div class="contents-text">Password</div>
+                        <input type="password" placeholder="Password" class="boxStyle" id="PWInputId">
+                        <div class="ballonbox" id="PWBallonBoxId">Please enter your password!</div>
+                        <img src="check.png" alt="" class="imagestyle" id="PWCheckId">
+                        
+                        <div class="contents-text">Confirm Password</div>
+                        <input type="password" placeholder="Confirm Password" class="boxStyle" id="PWCheckInputId">
+                        <div class="ballonbox" id="PWCheckBallonBoxId">Please re-enter your password!</div>
+                        <img src="check.png" alt="" class="imagestyle" id="PWCheckCheckId">
+                        
+                        <div class="loginBtn" id="signupSubmitId">Sign up</div>
+                        <!-- <input type="submit" class="loginBtn" value="Sign up"> -->
+                    </form>
+                    
+                    
+                </div>
+            </div>
+            <div class="contents-container" id="SignedUpCompleteId">
+                <div class="contents">
+                    <div class="contents-text" style="font-weight: bold; font-size: 1.4rem;">You are signed up.</div>
+            
+                </div>
+            </div>
+            <div class="contents-container" id="LoginpCompleteId">
+                <div class="contents">
+                    <div class="contents-text" style="font-weight: bold; font-size: 1.4rem;">You are logged in.</div>
+            
+                </div>
             </div>
         </div>
     </section>
