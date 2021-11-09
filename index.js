@@ -39,10 +39,21 @@ $('#signupTabId').click(function () { // Changes that occur when you press the s
     $('#loginNaviId').addClass('navigation-bar-inactive');
     $('#loginTextId').removeClass('text-active');
     $('#loginTextId').addClass('text-inactive');
-    $('#loginBoxId').hide();
-    $('#loginBoxId .contents').hide();
-    $('#signupBoxId').show();
-    $('#signupBoxId .contents').fadeIn(1500);
+
+    if (signUp) { // signup complete
+        $('#loginBoxId').hide();
+        $('#loginBoxId .contents').hide();
+        $('#SignedUpCompleteId').show();
+        $('#SignedUpCompleteId .contents').hide();
+        $('#SignedUpCompleteId .contents').fadeIn(1500);
+    }
+    else {
+        $('#loginBoxId').hide();
+        $('#loginBoxId .contents').hide();
+        $('#signupBoxId').show();
+        $('#signupBoxId .contents').fadeIn(1500);
+    }
+    
 
     
 });
